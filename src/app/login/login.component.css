@@ -1,0 +1,108 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* .container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  } */
+
+form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+  text-align: center;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+
+.container .signup-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #999;
+}
+
+.container .signup-link a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+/* Add styles for notification popups */
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.notification {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.notification.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.notification.error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.notification.warning {
+  background-color: #ffc107;
+  color: #000;
+}
+.notification-container.show {
+  display: block;
+  opacity: 1;
+}

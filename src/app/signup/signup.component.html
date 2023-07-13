@@ -1,0 +1,184 @@
+<body>
+  <div class="container">
+    <form
+      class="example-form"
+      [formGroup]="signupForm"
+      (ngSubmit)="proceedSignup()"
+    >
+      <h2>Signup</h2>
+
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="first_name">First Name:</label>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="first_name"
+            formControlName="first_name"
+            autocomplete="given-name"
+          />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('first_name')?.errors &&
+            signupForm.get('first_name')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('first_name')?.hasError('required')">
+            First name is required.
+          </div>
+          <div *ngIf="signupForm.get('first_name')?.hasError('invalidName')">
+            Invalid first name. Only alphabets are allowed.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="last_name">Last Name:</label>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="last_name"
+            formControlName="last_name"
+            autocomplete="family-name"
+          />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('last_name')?.errors &&
+            signupForm.get('last_name')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('last_name')?.hasError('required')">
+            Last name is required.
+          </div>
+          <div *ngIf="signupForm.get('last_name')?.hasError('invalidName')">
+            Invalid last name. Only alphabets are allowed.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="username">Username:</label>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            autocomplete="given-name"
+          />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('username')?.errors &&
+            signupForm.get('username')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('username')?.hasError('required')">
+            Username is required.
+          </div>
+          <div *ngIf="signupForm.get('username')?.hasError('invalidName')">
+            Invalid username. Only alphabets are allowed.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="email">Email:</label>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            autocomplete="off"
+          />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('email')?.errors && signupForm.get('email')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('email')?.hasError('required')">
+            Email is required.
+          </div>
+          <div *ngIf="signupForm.get('email')?.hasError('email')">
+            Invalid email address.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="mobile">Mobile:</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" id="mobile" formControlName="mobile" />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('mobile')?.errors && signupForm.get('mobile')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('mobile')?.hasError('required')">
+            Mobile number is required.
+          </div>
+          <div *ngIf="signupForm.get('mobile')?.hasError('invalidMobile')">
+            Invalid mobile number. Please enter a 10-digit number.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label for="password">Password:</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" id="password" formControlName="password" />
+        </div>
+        <div
+          *ngIf="
+            signupForm.get('password')?.errors &&
+            signupForm.get('password')?.dirty
+          "
+        >
+          <div *ngIf="signupForm.get('password')?.hasError('required')">
+            Password is required.
+          </div>
+          <div *ngIf="signupForm.get('password')?.hasError('pattern')">
+            Password must contain at least 8 characters, including one uppercase
+            letter, one lowercase letter, one digit, and one special character.
+          </div>
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="label-wrapper">
+          <label>Gender:</label>
+        </div>
+        <div class="input-wrapper">
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              formControlName="gender"
+            />
+            <label for="male">Male</label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              formControlName="gender"
+            />
+            <label for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid">Submit</button>
+      <button class="login-btn" type="button" routerLink="/login">Login</button>
+    </form>
+  </div>
+</body>

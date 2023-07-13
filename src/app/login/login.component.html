@@ -1,0 +1,30 @@
+<body>
+  <div class="container">
+    <form
+      class="example-form"
+      [formGroup]="loginForm"
+      (ngSubmit)="proceedlogin()"
+    >
+      <h2>Login</h2>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
+      <button>Login</button>
+      <button routerLink="/signup">Signup</button>
+    </form>
+  </div>
+  <div class="notification-container">
+    <div
+      *ngIf="showNotification"
+      class="notification"
+      [ngClass]="notificationType"
+    >
+      {{ notificationMessage }}
+    </div>
+  </div>
+</body>

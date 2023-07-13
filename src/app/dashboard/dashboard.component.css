@@ -1,0 +1,364 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0px auto 0px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 95%;
+  padding: 10px;
+  margin: 0px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"],
+button.edit-button,
+button.save-button,
+button.cancel-button,
+button.delete-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+button.edit-button,
+button.save-button,
+button.cancel-button,
+button.delete-button {
+  background-color: #45a050;
+  color: #fff;
+  border: none;
+  margin-right: 5px;
+}
+.container button:hover {
+  background-color: #45a049;
+}
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.notification {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.notification.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.notification.error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.notification.warning {
+  background-color: #ffc107;
+  color: #000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.friend-list-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.table-form.hidden {
+  display: none;
+}
+
+.content.expanded {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+} */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.occasion-container {
+  margin-top: 40px;
+}
+
+.occasion-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.occasion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.occasion-item:hover {
+  transform: scale(1.05);
+}
+
+.occasion-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.occasion-details {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.notification {
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notification.success {
+  background-color: #28a745;
+}
+
+.notification.error {
+  background-color: #dc3545;
+}
+
+.notification.warning {
+  background-color: #ffc107;
+}
+
+/* Occasion Images */
+.occasion-item.birthday {
+  background-color: #ff6b6b;
+}
+
+.occasion-item.anniversary {
+  background-color: #ffb347;
+}
+
+.occasion-item.festival {
+  background-color: #74b9ff;
+}
+
+.occasion-item.special-date {
+  background-color: #55efc4;
+}
+
+.occasion-item.others {
+  background-color: #a4b0be;
+}
+
+.occasion-image span {
+  text-transform: uppercase;
+}
+
+button[type="cancel"] {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.floating-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: white;
+  padding: 20px;
+  border-color: gray;
+  border-width: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.floating-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.floating-form .form-group {
+  margin-bottom: 20px;
+}
+
+.floating-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.floating-form input[type="text"],
+.floating-form input[type="date"] {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.floating-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

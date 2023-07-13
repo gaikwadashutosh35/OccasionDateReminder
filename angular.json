@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -60,9 +61,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+              "proxyConfig": "proxy.conf.json",
               "browserTarget": "OccasionDateReminder:build:production"
             },
             "development": {
+              "proxyConfig": "proxy.conf.json",
               "browserTarget": "OccasionDateReminder:build:development"
             }
           },
@@ -87,7 +90,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/custom-theme.scss"
             ],
             "scripts": []
           }

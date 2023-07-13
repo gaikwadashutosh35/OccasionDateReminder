@@ -1,0 +1,114 @@
+<div class="occasion-container">
+  <h2>Select Occasion</h2>
+  <div class="occasion-list">
+    <div class="occasion-item birthday" (click)="selectTheOccasion('Birthday')">
+      <div class="occasion-image">
+        <mat-icon>cake</mat-icon>
+      </div>
+      <div class="occasion-details">
+        <h3>Birthday</h3>
+      </div>
+    </div>
+    <div
+      class="occasion-item anniversary"
+      (click)="selectTheOccasion('Anniversary')"
+    >
+      <div class="occasion-image">
+        <mat-icon>favorite</mat-icon>
+      </div>
+      <div class="occasion-details">
+        <h3>Anniversary</h3>
+      </div>
+    </div>
+    <div class="occasion-item festival" (click)="selectTheOccasion('Festival')">
+      <div class="occasion-image">
+        <mat-icon>nature</mat-icon>
+      </div>
+      <div class="occasion-details">
+        <h3>Festival</h3>
+      </div>
+    </div>
+    <div
+      class="occasion-item special-date"
+      (click)="selectTheOccasion('Special Date')"
+    >
+      <div class="occasion-image">
+        <mat-icon>calendar_today</mat-icon>
+      </div>
+      <div class="occasion-details">
+        <h3>Special Date</h3>
+      </div>
+    </div>
+    <div class="occasion-item others" (click)="selectTheOccasion('Others')">
+      <div class="occasion-image">
+        <mat-icon>star</mat-icon>
+      </div>
+      <div class="occasion-details">
+        <h3>Others</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="floating-form" *ngIf="selectedOccasion">
+  <div class="occasion-container">
+    <h2>Add Occasion</h2>
+    <form
+      class="example-form"
+      [formGroup]="occasionForm"
+      (ngSubmit)="addOccasion()"
+    >
+      <div class="form-group">
+        <label for="occasionName">Occasion Name:</label>
+        <input
+          type="text"
+          id="occasionName"
+          formControlName="occasion_name"
+          placeholder="Enter occasion name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="occasionDate">Occasion Date:</label>
+        <input
+          type="date"
+          id="occasionDate"
+          formControlName="occasion_date"
+          placeholder="Select occasion date"
+        />
+      </div>
+      <button type="submit">Add Occasion</button>
+    </form>
+    <button type="cancel" (click)="cancelAddOccasion()">Cancel</button>
+  </div>
+</div>
+
+<div class="occasion-container">
+  <h2>Upcoming Occasions</h2>
+  <div class="occasion-list">
+    <div
+      class="occasion-item"
+      *ngFor="let occasion of occasions"
+      (click)="selectOccasion(occasion)"
+    >
+      <div
+        class="occasion-image"
+        [ngClass]="getOccasionImageClass(occasion.occasion_name)"
+      >
+        <span>{{ getOccasionInitials(occasion.occasion_name) }}</span>
+      </div>
+      <div class="occasion-details">
+        <h3>{{ occasion.occasion_name }}</h3>
+        <p>{{ occasion.occasion_date | date : "longDate" }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notification-container">
+  <div
+    *ngIf="showNotification"
+    class="notification"
+    [ngClass]="notificationType"
+  >
+    {{ notificationMessage }}
+  </div>
+</div>

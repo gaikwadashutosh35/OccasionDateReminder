@@ -1,0 +1,27 @@
+<h2>Edit Occasion</h2>
+
+<form class="example-form" [formGroup]="occasionForm" (ngSubmit)="updateOccasion()">
+  <div class="form-group">
+    <label for="occasionName">Occasion Name:</label>
+    <input type="text" id="occasionName" formControlName="occasion_name" />
+  </div>
+  <div class="form-group">
+    <label for="occasionDate">Occasion Date:</label>
+    <input type="date" id="occasionDate" formControlName="occasion_date" />
+  </div>
+
+  <div class="buttons">
+    <button type="submit">Update</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>
+
+<div class="notification-container">
+    <div
+      *ngIf="showNotification"
+      class="notification"
+      [ngClass]="notificationType"
+    >
+      {{ notificationMessage }}
+    </div>
+  </div>
